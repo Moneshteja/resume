@@ -3,118 +3,429 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Resume of Monesh Teja Sanduru, Integration Developer.">
+  <meta name="description" content="Resume of Monesh Teja Sanduru, Integration Developer">
   <title>Monesh Teja Sanduru | Integration Developer</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <style>
-    :root { --ink: #243247; --muted: #526174; --accent: #176b87; --line: #dce5eb; --panel: #f2f7f9; }
+    :root {
+      --navy: #102a43;
+      --blue: #1f6f8b;
+      --cyan: #37a6b5;
+      --ink: #243b53;
+      --muted: #627d98;
+      --line: #d9e2ec;
+      --paper: #ffffff;
+      --soft: #f4f7fa;
+    }
+
     * { box-sizing: border-box; }
-    body { margin: 0; padding: 32px 16px; background: #eef2f5; color: var(--ink); font: 15px/1.55 Arial, sans-serif; }
-    main { max-width: 900px; margin: auto; padding: 40px 52px; background: #fff; box-shadow: 0 4px 20px #172b3b14; }
-    header { text-align: center; padding-bottom: 20px; border-bottom: 2px solid var(--accent); }
-    h1 { margin: 0; font-size: 30px; letter-spacing: 1px; }
-    .role { margin: 6px 0 12px; color: var(--accent); font-size: 19px; font-weight: bold; }
-    .contact { color: var(--muted); font-size: 14px; }
-    a { color: var(--accent); text-decoration: none; }
-    section { margin-top: 24px; }
-    h2 { margin: 0 0 12px; padding: 7px 12px; background: var(--panel); border-left: 4px solid var(--accent); font-size: 17px; }
-    p { margin: 7px 0; }
-    .job { margin: 0 0 16px; }
-    .job-heading { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px; }
-    .job-title { font-weight: bold; }
-    .date, .muted { color: var(--muted); }
-    ul { margin: 7px 0; padding-left: 22px; }
-    li { margin: 4px 0; }
-    .skills { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 24px; }
-    .skills p { margin: 3px 0; }
-    footer { margin-top: 28px; color: var(--muted); text-align: center; font-size: 12px; }
-    @media (max-width: 600px) { body { padding: 0; } main { padding: 26px 20px; } .skills { grid-template-columns: 1fr; } }
-    @media print { body { padding: 0; background: #fff; } main { max-width: none; padding: 20px 28px; box-shadow: none; } a { color: inherit; } }
+
+    body {
+      margin: 0;
+      padding: 34px 16px;
+      background:
+        radial-gradient(circle at 12% 8%, rgba(31,111,139,.08), transparent 22rem),
+        #edf2f7;
+      color: var(--ink);
+      font-family: "Manrope", Arial, sans-serif;
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .resume {
+      max-width: 960px;
+      margin: auto;
+      background: var(--paper);
+      box-shadow: 0 14px 50px rgba(16,42,67,.14);
+      display: grid;
+      grid-template-columns: 285px 1fr;
+    }
+
+    .sidebar {
+      position: relative;
+      overflow: hidden;
+      padding: 38px 30px;
+      background: linear-gradient(155deg, var(--navy) 0%, #183b56 70%, #1f5f78 100%);
+      color: #fff;
+    }
+
+    .sidebar::after {
+      content: "";
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      right: -150px;
+      bottom: 60px;
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 50%;
+      box-shadow: 0 0 0 28px rgba(255,255,255,.025), 0 0 0 56px rgba(255,255,255,.018);
+    }
+
+    .sidebar > * { position: relative; z-index: 1; }
+
+    .profile-mark {
+      width: 54px;
+      height: 54px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 18px;
+      border: 1px solid rgba(255,255,255,.42);
+      border-radius: 14px;
+      background: rgba(255,255,255,.08);
+      color: #74d3dc;
+      font: 800 18px/1 "Manrope", sans-serif;
+      letter-spacing: 1px;
+    }
+
+    .name {
+      margin: 0 0 5px;
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: 27px;
+      line-height: 1.12;
+      letter-spacing: -.3px;
+    }
+
+    .title {
+      margin: 0 0 28px;
+      color: #78d5de;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+    }
+
+    .side-section { margin-top: 26px; }
+
+    .side-section h2 {
+      margin: 0 0 12px;
+      padding-bottom: 7px;
+      border-bottom: 1px solid rgba(255,255,255,.16);
+      color: #fff;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .contact-list, .side-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .contact-list li {
+      display: grid;
+      grid-template-columns: 20px 1fr;
+      gap: 7px;
+      margin: 9px 0;
+      font-size: 12px;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-list i { margin-top: 3px; color: #78d5de; }
+
+    .sidebar a { color: #fff; text-decoration: none; }
+
+    .skill-list li { margin: 8px 0; }
+
+    .skill-name {
+      display: block;
+      margin-bottom: 4px;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .skill-bar {
+      height: 3px;
+      border-radius: 3px;
+      background: rgba(255,255,255,.15);
+    }
+
+    .skill-bar span {
+      display: block;
+      height: 100%;
+      border-radius: 3px;
+      background: linear-gradient(90deg, #78d5de, #b8edf0);
+    }
+
+    .side-list li { margin: 7px 0; font-size: 12.5px; }
+
+    .main {
+      min-width: 0;
+      padding: 42px 46px 32px;
+    }
+
+    .summary {
+      margin-bottom: 30px;
+      padding: 18px 20px;
+      border-left: 4px solid var(--cyan);
+      background: var(--soft);
+      color: #486581;
+    }
+
+    .summary p { margin: 0; }
+
+    section { margin-bottom: 26px; }
+
+    .section-heading {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 15px;
+      color: var(--navy);
+      font-size: 15px;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+
+    .section-heading::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border: 2px solid var(--cyan);
+      border-radius: 50%;
+      box-shadow: 0 0 0 3px #e7f5f6;
+    }
+
+    .section-heading span { flex: 1; }
+    .section-heading span::after {
+      content: "";
+      display: block;
+      width: 52px;
+      height: 2px;
+      margin-top: 5px;
+      background: var(--cyan);
+    }
+
+    .job {
+      position: relative;
+      margin-left: 7px;
+      padding: 0 0 18px 22px;
+      border-left: 1px solid var(--line);
+    }
+
+    .job:last-child { padding-bottom: 0; }
+
+    .job::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 5px;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--cyan);
+      box-shadow: 0 0 0 4px #eaf5f6;
+    }
+
+    .job-heading {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .job-title { color: var(--navy); font-size: 14px; }
+
+    .company { margin-top: 2px; color: var(--blue); font-size: 12.5px; font-weight: 700; }
+
+    .date {
+      flex: none;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: #edf6f7;
+      color: var(--blue);
+      font-size: 11px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 9px 12px;
+    }
+
+    .skill-card {
+      min-height: 44px;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: #fff;
+      color: #486581;
+      font-size: 12px;
+    }
+
+    .skill-card strong { display: block; color: var(--navy); font-size: 11px; text-transform: uppercase; letter-spacing: .5px; }
+
+    .detail-list { margin: 0; padding-left: 18px; }
+    .detail-list li { margin: 7px 0; padding-left: 3px; }
+    .detail-list li::marker { color: var(--cyan); }
+
+    footer {
+      margin-top: 18px;
+      padding-top: 12px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 10px;
+      text-align: right;
+    }
+
+    @media (max-width: 760px) {
+      body { padding: 0; background: #fff; }
+      .resume { grid-template-columns: 1fr; box-shadow: none; }
+      .sidebar { padding: 30px 24px; }
+      .main { padding: 32px 24px; }
+      .skills-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 480px) {
+      .job-heading { flex-direction: column; }
+      .date { white-space: normal; }
+    }
+
+    @media print {
+      @page { size: A4; margin: 0; }
+      body { padding: 0; background: #fff; }
+      .resume { max-width: none; width: 210mm; min-height: 297mm; box-shadow: none; grid-template-columns: 70mm 140mm; }
+      .sidebar { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+      .main { padding: 10mm 9mm 7mm; }
+      section { break-inside: avoid; }
+    }
   </style>
 </head>
 <body>
-  <main>
-    <header>
-      <h1>MONESH TEJA SANDURU</h1>
-      <p class="role">Integration Developer</p>
-      <div class="contact">
-        <i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:moneshtejasanduru@gmail.com">moneshtejasanduru@gmail.com</a>
-        &nbsp;|&nbsp; <i class="fas fa-phone-alt" aria-hidden="true"></i> +91 8555812436<br>
-        <i class="fab fa-linkedin" aria-hidden="true"></i> <a href="https://www.linkedin.com/in/monesh-teja-sanduru-849740290">LinkedIn profile</a>
-      </div>
-    </header>
+  <article class="resume">
+    <aside class="sidebar">
+      <div class="profile-mark">MTS</div>
+      <h1 class="name">Monesh Teja Sanduru</h1>
+      <p class="title">Integration Developer</p>
 
-    <section>
-      <h2>Professional Summary</h2>
-      <p>Integration Developer with hands-on experience across integration, workflow, data, and cloud platforms. Familiar with Boomi, Orchestra, Azure Logic Apps, dbt, Snowflake, Oracle, DevOps, and ServiceNow. Able to navigate Dynamics 365 to locate and review relevant source data. A quick learner who uses AI tools thoughtfully to improve work efficiency and productivity.</p>
-    </section>
+      <section class="side-section">
+        <h2>Contact</h2>
+        <ul class="contact-list">
+          <li><i class="fas fa-envelope"></i><a href="mailto:moneshtejasanduru@gmail.com">moneshtejasanduru@gmail.com</a></li>
+          <li><i class="fas fa-phone"></i><span>+91 8555812436</span></li>
+          <li><i class="fab fa-linkedin"></i><a href="https://www.linkedin.com/in/monesh-teja-sanduru-849740290">LinkedIn Profile</a></li>
+        </ul>
+      </section>
 
-    <section>
-      <h2>Professional Experience</h2>
-      <div class="job">
-        <div class="job-heading">
-          <span class="job-title">Integration Developer | TGH Software Solutions</span>
-          <span class="date">September 15, 2024 – Present</span>
+      <section class="side-section">
+        <h2>Core Expertise</h2>
+        <ul class="skill-list">
+          <li>
+            <span class="skill-name">Integration Platforms</span>
+            <div class="skill-bar"><span style="width:88%"></span></div>
+          </li>
+          <li>
+            <span class="skill-name">Data Platforms</span>
+            <div class="skill-bar"><span style="width:82%"></span></div>
+          </li>
+          <li>
+            <span class="skill-name">DevOps &amp; ServiceNow</span>
+            <div class="skill-bar"><span style="width:76%"></span></div>
+          </li>
+          <li>
+            <span class="skill-name">Dynamics 365</span>
+            <div class="skill-bar"><span style="width:68%"></span></div>
+          </li>
+        </ul>
+      </section>
+
+      <section class="side-section">
+        <h2>Languages</h2>
+        <ul class="side-list">
+          <li>Telugu</li>
+          <li>Hindi</li>
+          <li>English</li>
+        </ul>
+      </section>
+
+      <section class="side-section">
+        <h2>Professional Strengths</h2>
+        <ul class="side-list">
+          <li>Quick learner</li>
+          <li>Analytical problem-solving</li>
+          <li>Adaptability</li>
+          <li>AI-powered productivity</li>
+        </ul>
+      </section>
+    </aside>
+
+    <main class="main">
+      <section class="summary">
+        <p>Integration Developer with hands-on experience across integration, workflow, data, and cloud platforms. Skilled in Boomi, Orchestra, Azure Logic Apps, dbt, Snowflake, Oracle, DevOps, and ServiceNow. Familiar with Dynamics 365 for navigating and locating source data. Uses AI tools effectively to research, solve problems, and improve work efficiency.</p>
+      </section>
+
+      <section>
+        <h2 class="section-heading"><span>Professional Experience</span></h2>
+        <div class="job">
+          <div class="job-heading">
+            <div>
+              <div class="job-title">Integration Developer</div>
+              <div class="company">TGH Software Solutions</div>
+            </div>
+            <span class="date">Sep 2024 – Present</span>
+          </div>
         </div>
-      </div>
-      <div class="job">
-        <div class="job-heading">
-          <span class="job-title">VXI Global Solutions | Hyderabad</span>
-          <span class="date">April 1, 2024 – September 14, 2024</span>
+        <div class="job">
+          <div class="job-heading">
+            <div>
+              <div class="job-title">VXI Global Solutions</div>
+              <div class="company">Hyderabad</div>
+            </div>
+            <span class="date">Apr – Sep 2024</span>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section>
-      <h2>Technical Skills</h2>
-      <div class="skills">
-        <p><strong>Integration &amp; workflow:</strong> Boomi, Orchestra, Azure Logic Apps</p>
-        <p><strong>Data &amp; databases:</strong> dbt, Snowflake, Oracle</p>
-        <p><strong>Platforms &amp; operations:</strong> DevOps, ServiceNow</p>
-        <p><strong>ERP:</strong> Dynamics 365 (basic navigation and source-data lookup)</p>
-        <p><strong>Productivity:</strong> AI tools for research, problem-solving, and improving work speed</p>
-        <p><strong>Professional strengths:</strong> Quick learner, adaptable, collaborative, and analytical</p>
-      </div>
-    </section>
+      <section>
+        <h2 class="section-heading"><span>Technical Skills</span></h2>
+        <div class="skills-grid">
+          <div class="skill-card"><strong>Integration &amp; Workflow</strong>Boomi · Orchestra · Azure Logic Apps</div>
+          <div class="skill-card"><strong>Data &amp; Databases</strong>dbt · Snowflake · Oracle</div>
+          <div class="skill-card"><strong>Operations</strong>DevOps · ServiceNow</div>
+          <div class="skill-card"><strong>ERP &amp; Productivity</strong>Dynamics 365 · AI Tools</div>
+        </div>
+      </section>
 
-    <section>
-      <h2>Education</h2>
-      <ul>
-        <li><strong>Quba College of Engineering and Technology</strong> — B.Tech, Computer Science and Engineering; 76.6%, First Class with Distinction (2019–2023)</li>
-        <li><strong>Sri Chaitanya Junior College</strong> — Intermediate; 9.34 GPA (2017–2019)</li>
-        <li><strong>Government Model High School</strong> — Class 10; 8.2 GPA (2017)</li>
-      </ul>
-    </section>
+      <section>
+        <h2 class="section-heading"><span>Education</span></h2>
+        <ul class="detail-list">
+          <li><strong>Quba College of Engineering and Technology</strong> — B.Tech, Computer Science and Engineering; 76.6%, First Class with Distinction (2019–2023)</li>
+          <li><strong>Sri Chaitanya Junior College</strong> — Intermediate; 9.34 GPA (2017–2019)</li>
+          <li><strong>Government Model High School</strong> — Class 10; 8.2 GPA (2017)</li>
+        </ul>
+      </section>
 
-    <section>
-      <h2>Projects</h2>
-      <ul>
-        <li><strong>Major Engineering Project:</strong> Data isolation using fine-grained access for searchable encryption.</li>
-        <li><strong>Web development:</strong> Designed and developed web pages using HTML, CSS, and JavaScript and hosted them online.</li>
-        <li><strong>Python projects:</strong> Built a Tkinter-based calculator and other Python practice projects.</li>
-      </ul>
-    </section>
+      <section>
+        <h2 class="section-heading"><span>Projects</span></h2>
+        <ul class="detail-list">
+          <li><strong>Major Engineering Project:</strong> Data isolation using fine-grained access for searchable encryption.</li>
+          <li><strong>Web Development:</strong> Designed and developed web pages using HTML, CSS, and JavaScript and hosted them online.</li>
+          <li><strong>Python Projects:</strong> Built a Tkinter-based calculator and other Python practice projects.</li>
+        </ul>
+      </section>
 
-    <section>
-      <h2>Internship</h2>
-      <p><strong>Python Developer Intern</strong> — Sun Square Technologies Pvt. Ltd., Nellore. Practiced Python programming fundamentals, including conditional statements and iterative concepts.</p>
-    </section>
+      <section>
+        <h2 class="section-heading"><span>Internship</span></h2>
+        <p><strong>Python Developer Intern</strong> — Sun Square Technologies Pvt. Ltd., Nellore. Practiced Python programming fundamentals, including conditional statements and iterative concepts.</p>
+      </section>
 
-    <section>
-      <h2>Awards &amp; Certifications</h2>
-      <ul>
-        <li>First prize, District-Level Technical Quiz at DBS College (2022).</li>
-        <li>Second prize, City-Level Mathematics Competition (2017).</li>
-        <li>Completed 50+ certificates through continuous learning and skills development.</li>
-      </ul>
-    </section>
+      <section>
+        <h2 class="section-heading"><span>Awards &amp; Certifications</span></h2>
+        <ul class="detail-list">
+          <li>First prize, District-Level Technical Quiz at DBS College (2022).</li>
+          <li>Second prize, City-Level Mathematics Competition (2017).</li>
+          <li>Completed 50+ certificates through continuous learning and skills development.</li>
+        </ul>
+      </section>
 
-    <section>
-      <h2>Languages</h2>
-      <p>Telugu · Hindi · English</p>
-    </section>
-
-    <footer>© Monesh Teja Sanduru</footer>
-  </main>
+      <footer>MONESH TEJA SANDURU · INTEGRATION DEVELOPER</footer>
+    </main>
+  </article>
 </body>
 </html>
